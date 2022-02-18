@@ -34,6 +34,10 @@ switch (_soundSet) do {
         _soundSet = ["SCP_CB_Door1_Close_1", "SCP_CB_Door1_Close_2", "SCP_CB_Door1_Close_3"];
         _object animateSource [_animSource, 0];
     };
+    case "Door1 Unauthorised": {
+        _soundSet = ["SCP_CB_Door1_Close_1", "SCP_CB_Door1_Close_2", "SCP_CB_Door1_Close_3"];
+        _object animateSource [_animSource, 0];
+    };
     default {
         systemChat format ["fnc_doorOpen error: %1 is not a recognised _soundSet string."];
     };

@@ -75,6 +75,26 @@ class CfgVehicles
                 initPhase = 0;
             };
         };
+
+        class Attributes 
+        {
+            class AuthorisationCheck {
+                displayName = "Required Keycard Level";
+                tooltip = "0 = No Keycard - 5 = Level 5/Omni Keycard";
+                property = "AuthorisationCheckDoor1";
+                control = "Edit";
+
+                expression = "[_this, _value] remoteExec ['AuthLvl_fnc_InitAuthLvlVar'];";
+
+                defaultValue = "0";
+
+                //--- Optional properties
+			    unique = 0; // When 1, only one entity of the type can have the value in the mission (used for example for variable names or player control)
+				validate = "number"; // Validate the value before saving. If the value is not of given type e.g. "number", the default value will be set. Can be "none", "expression", "condition", "number" or "variable"
+				condition = "object"; // Condition for attribute to appear (see the table below)
+				typeName = "NUMBER"; // Defines data type of saved value, can be STRING, NUMBER or BOOL. Used only when control is "Combo", "Edit" or their variants
+            };
+        };
     };
 
     class SCP_CB_Things_Door1_Button_Error : SCP_CB_Things_base
